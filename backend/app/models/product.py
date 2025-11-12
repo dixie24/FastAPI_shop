@@ -16,3 +16,4 @@ class Product(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     category = relationship("Category", back_populates="products")
+    cart_items = relationship("CartItem", back_populates="product")
