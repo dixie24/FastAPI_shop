@@ -15,5 +15,6 @@ class Product(Base):
     image_url = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-    category = relationship("Category", back_populates="products")
-    cart_items = relationship("CartItem", back_populates="product")
+    category = relationship("Category", back_populates="products")  
+    reviews = relationship("Review", back_populates="product", cascade="all, delete-orphan")
+    
