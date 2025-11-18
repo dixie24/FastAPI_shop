@@ -11,3 +11,10 @@ def create_route(
     current_user=Depends(get_current_user),
 ):
     return RouteController.create_route(route, current_user)
+
+@router.get("/{route_id}", response_model=RouteOut)
+def get_route(
+    route_id: int,
+    current_user=Depends(get_current_user),
+):
+    return RouteController.get_route(route_id, current_user)
