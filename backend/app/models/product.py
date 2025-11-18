@@ -17,4 +17,6 @@ class Product(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     category = relationship("Category", back_populates="products")  
     reviews = relationship("Review", back_populates="product", cascade="all, delete-orphan")
-    
+    tags = relationship("Tag", secondary="product_tags", back_populates="products")
+    stock_quantity = Column(Integer, default=0)
+    sku = Column(String, unique=True, index=True)
