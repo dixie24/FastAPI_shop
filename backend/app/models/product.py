@@ -2,7 +2,8 @@ from sqlalchemy import Column, Integer, String, Text, ForeignKey, Float, DateTim
 from sqlalchemy.orm import relationship
 from ..database import Base
 from datetime import datetime
-
+import decimal
+import models
 
 class Product(Base):
     __tablename__ = "products"
@@ -15,12 +16,9 @@ class Product(Base):
     image_url = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
     category = relationship("Category", back_populates="products")  
-    reviews = relationship("Review", back_populates="product", cascade="all, delete-orphan")
-    tags = relationship("Tag", secondary="product_tags", back_populates="products")
-    stock_quantity = Column(Integer, default=0)
-    sku = Column(String, unique=True, index=True)
-    
+
     
 class Category(Base):
     __tablename__ = "categories"
@@ -28,3 +26,4 @@ class Category(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
     products = relationship("Product", back_populates="category")
+    

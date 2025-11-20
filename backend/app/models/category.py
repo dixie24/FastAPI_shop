@@ -9,7 +9,12 @@ class Category(Base):
     name = Column(String, unique=True, index=True, nullable=False)
     slug = Column(String, unique=True, index=True, nullable=False)
     
-    products = relationship("Product", back_populates="category")\
-        
-    def __repr__(self):
-        return f"<Category(id={self.id}, name='{self.name}', slug='{self.slug}')>"
+    products = relationship("Product", back_populates="category")
+    tags = relationship("Tag", secondary="category_tags", back_populates="categories")
+    sales = relationship("Sale", back_populates="category")
+    
+    def __reapr__(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"
+    
+    
+    models.DecimalField(_(""), max_digits=5, decimal_places=2)
