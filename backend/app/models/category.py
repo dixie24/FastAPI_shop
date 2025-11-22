@@ -18,6 +18,8 @@ class Category(Base):
     purchases2 = relationship("Purchase2", back_populates="category")
     stock_entries = relationship("StockEntry", back_populates="category")
     stock_exits = relationship("StockExit", back_populates="category")
+    stock_exits2 = relationship("StockExit2", back_populates="category")
+    
     
     def __reapr__(self):
         return f"<Category(id={self.id}, name='{self.name}')>"
