@@ -12,3 +12,8 @@ class Category(Base):
     products = relationship("Product", back_populates="category")
     tags = relationship("Tag", secondary="category_tags", back_populates="categories")
     sales = relationship("Sale", back_populates="category")
+    sales2 = relationship("Sale2", back_populates="category")
+    purchases = relationship("Purchase", back_populates="category")
+    purchases2 = relationship("Purchase2", back_populates="category")
+    stock_entries = relationship("StockEntry", back_populates="category")
+    stock_exits = relationship("StockExit", back_populates="category")

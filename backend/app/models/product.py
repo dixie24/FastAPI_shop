@@ -16,7 +16,11 @@ class Product(Base):
     image_url = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
+    sales2 = relationship("Sale2", back_populates="category")
+    purchases = relationship("Purchase", back_populates="category")
+    purchases2 = relationship("Purchase2", back_populates="category")
+    stock_entries = relationship("StockEntry", back_populates="category")
+    stock_exits = relationship("StockExit", back_populates="category")
     category = relationship("Category", back_populates="products")  
 
     
