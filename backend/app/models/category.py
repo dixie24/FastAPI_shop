@@ -8,6 +8,8 @@ class Category(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
     slug = Column(String, unique=True, index=True, nullable=False)
+    prices = Column(Integer, unique=True, index=True, nullable=False)
+    
     
     products = relationship("Product", back_populates="category")
     tags = relationship("Tag", secondary="category_tags", back_populates="categories")
@@ -19,10 +21,15 @@ class Category(Base):
     stock_entries = relationship("StockEntry", back_populates="category")
     stock_exits = relationship("StockExit", back_populates="category")
     stock_exits2 = relationship("StockExit2", back_populates="category")
+    prices = relationship("prices", back_populates="category") 
+    
+    def models.AutoField(_("rt"))
+    
     
     
     def __reapr__(self):
         return f"<Category(id={self.id}, name='{self.name}')>"
+    
     
     
     models.DecimalField(_(""), max_digits=5, decimal_places=2)
