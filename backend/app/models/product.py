@@ -33,6 +33,8 @@ class Category(Base):
     tags = relationship("Tag", secondary="category_tags", back_populates="categories")
     sales = relationship("Sale", back_populates="category")
     prices = relationship("price", back_populates="prices")
+    prices2 = Column(Integer, unique=True, index=True, nullable=False)
+    discounts = Column(Integer, unique=True, index=True, nullable=False
     
     def __repr__(self):
         return f"<Category(id={self.id}, name='{self.name}')>"

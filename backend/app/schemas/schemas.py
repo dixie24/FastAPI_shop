@@ -18,3 +18,5 @@ class Category(Base):
     stock_entries = relationship("StockEntry", back_populates="category")
     stock_exits = relationship("StockExit", back_populates="category")
     prices = relationship("price", back_populates="prices")
+    prices2 = Column(Integer, unique=True, index=True, nullable=False)
+    discounts = Column(Integer, unique=True, index=True, nullable=False)
