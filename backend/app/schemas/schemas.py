@@ -20,3 +20,4 @@ class Category(Base):
     prices = relationship("price", back_populates="prices")
     prices2 = Column(Integer, unique=True, index=True, nullable=False)
     discounts = Column(Integer, unique=True, index=True, nullable=False)
+    discounts2 = Column(Integer, unique=True, index=True, nullable=False)

@@ -23,7 +23,9 @@ class Category(Base):
     stock_exits2 = relationship("StockExit2", back_populates="category")
     prices = relationship("prices", back_populates="category") 
     prices2 = Column(Integer, unique=True, index=True, nullable=False)
-    discounts = Column(Integer, unique=True, index=True, nullable=False
+    discounts = Column(Integer, unique=True, index=True, nullable=False)
+    discounts2 = Column(Integer, unique=True, index=True, nullable=False)
+                    
     
     def models.AutoField(_("rt"))
     
