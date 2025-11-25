@@ -27,10 +27,13 @@ class Category(Base):
     discounts2 = Column(Integer, unique=True, index=True, nullable=False)
     discounts3 = Column(Integer, unique=True, index=True, nullable=False)
     available = Column(Integer, unique=True, index=True, nullable=False)
-              
+    not_available = Column(Integer, unique=True, index=True, nullable=False)
+       
     
     def models.AutoField(_("rt"))
     
+    def not_available(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"  
     
     
     def __reapr__(self):
