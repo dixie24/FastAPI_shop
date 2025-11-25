@@ -17,7 +17,7 @@ class Category(Base):
     
     sales2 = relationship("Sale2", back_populates="category")
     purchases = relationship("Purchase", back_populates="category")
-    purchases2 = relationship("Purchase2", back_populates="category")
+    purchases2 = relationship("Purchase2", back_populates="category")df
     stock_entries = relationship("StockEntry", back_populates="category")
     stock_exits = relationship("StockExit", back_populates="category")
     stock_exits2 = relationship("StockExit2", back_populates="category")
@@ -25,7 +25,7 @@ class Category(Base):
     prices2 = Column(Integer, unique=True, index=True, nullable=False)
     discounts = Column(Integer, unique=True, index=True, nullable=False)
     discounts2 = Column(Integer, unique=True, index=True, nullable=False)
-                    
+              
     
     def models.AutoField(_("rt"))
     

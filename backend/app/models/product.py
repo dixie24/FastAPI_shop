@@ -42,3 +42,7 @@ class Category(Base):
     models.DecimalField(_(""), max_digits=5, decimal_places=2)
     models.DecimalField(_(""), max_digits=5, decimal_places=2)
     models.DecimalField(_(""), max_digits=5, decimal_places=2)
+    models.AutoField(_("rt"))
+    models.AutoField(_("rt"))
+    models.AutoField(_("rt"))   
+    models.AutoField(_("rt"))
