@@ -21,3 +21,6 @@ class Category(Base):
     prices2 = Column(Integer, unique=True, index=True, nullable=False)
     discounts = Column(Integer, unique=True, index=True, nullable=False)
     discounts2 = Column(Integer, unique=True, index=True, nullable=False)
+    Category = Column(Integer, unique=True, index=True, nullable=False)
+    Category2 = Column(Integer, unique=True, index=True, nullable=False)
+    Category3 = Column(Integer, unique=True, index=True, nullable=False)
