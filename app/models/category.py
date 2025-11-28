@@ -29,12 +29,21 @@ class Category(Base):
     available = Column(Integer, unique=True, index=True, nullable=False)
     not_available = Column(Integer, unique=True, index=True, nullable=False)
        
+    def available(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"
     
     def models.AutoField(_("rt"))
     
     def not_available(self):
         return f"<Category(id={self.id}, name='{self.name}')>"  
     
+    def discounts(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"  
+    def discounts2(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"
+    
+    def discounts3(self):
+        return f"<Category(id={self.id}, name='{self.name}')>"
     
     def __reapr__(self):
         return f"<Category(id={self.id}, name='{self.name}')>"

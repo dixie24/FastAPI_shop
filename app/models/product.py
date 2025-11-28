@@ -39,12 +39,15 @@ class Category(Base):
     prices2 = Column(Integer, unique=True, index=True, nullable=False)
     discounts = Column(Integer, unique=True, index=True, nullable=False)
     discounts2 = Column(Integer, unique=True, index=True, nullable=False)
+    discounts3 = Column(Integer, unique=True, index=True, nullable=False)
+    available = Column(Integer, unique=True, index=True, nullable=False)
+    not_available = Column(Integer, unique=True, index=True, nullable=False)
     
     def __repr__(self):
         return f"<Category(id={self.id}, name='{self.name}')>"
     models.DecimalField(_(""), max_digits=5, decimal_places=2)
-    models.DecimalField(_(""), max_digits=5, decimal_places=2)
-    models.DecimalField(_(""), max_digits=5, decimal_places=2)
+    models.DecimalField(_(""), max_digits=5, decimal_places=3)
+    models.DecimalField(_(""), max_digits=5, decimal_places=4)
     models.AutoField(_("rt"))
     models.AutoField(_("rt"))
     models.AutoField(_("rt"))   
